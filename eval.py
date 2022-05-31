@@ -34,7 +34,14 @@ def eval_model(model_name, test_img_path, submit_path, save_flag=True):
 
 
 if __name__ == '__main__': 
-	model_name = './pths/east_vgg16.pth'
-	test_img_path = os.path.abspath('../ICDAR_2015/test_img')
+	model_name = '/home/yubin/pro/EAST/pths/east_vgg16.pth'
+	# model_name = './pths/model_epoch_600.pth'
+	test_img_path = os.path.abspath('/data/yubindata/ICDAR2015/ch4_test_images')
 	submit_path = './submit'
 	eval_model(model_name, test_img_path, submit_path)
+	# epoch300: Calculated!{"precision": 0.7948841698841699, "recall": 0.7929706307173808, "hmean": 0.7939262472885033, "AP": 0}
+	# epoch400: Calculated!{"precision": 0.8115384615384615, "recall": 0.8127106403466539, "hmean": 0.8121241279769065, "AP": 0}
+	# epoch500: Calculated!{"precision": 0.8277043563387175, "recall": 0.8141550312951372, "hmean": 0.8208737864077669, "AP": 0}
+	# epoch600: Calculated!{"precision": 0.8103696591454633, "recall": 0.8127106403466539, "hmean": 0.8115384615384617, "AP": 0}
+	# east_vgg16.pth: Calculated!{"precision": 0.8435782108945528, "recall": 0.8127106403466539, "hmean": 0.8278567925453654, "AP": 0}
+
