@@ -181,11 +181,14 @@ def detect_dataset(model, device, test_img_path, submit_path):
 
 
 if __name__ == '__main__':
-	img_path    = '../ICDAR_2015/test_img/img_2.jpg'
-	model_path  = './pths/east_vgg16.pth'
-	res_img     = './res.bmp'
+	img_path    = '/data/yubindata/ICDAR2015/ch4_test_images/img_2.jpg'
+	img_path    = './image.png'
+	# model_path  = '/home/yubin/pro/EAST/pths/east_vgg16.pth'
+	model_path  = './pths/model_epoch_500.pth'
+	# res_img     = './res_image_epoch500_vgg_false.bmp'
+	res_img     = './image_500.bmp'
 	device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-	model = EAST().to(device)
+	model = EAST(False).to(device)
 	model.load_state_dict(torch.load(model_path))
 	model.eval()
 	img = Image.open(img_path)
